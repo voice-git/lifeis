@@ -1,0 +1,270 @@
+/*
+  news
+————————————————————————————————————————— */
+.p-news {
+    padding: 110px 0 140px;
+    &:first-child {
+        background: $bg-color;
+        .p-news__bg {
+            background: $bg-color;
+            width: calc(100% + 230px);
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            margin-left: -230px;
+        }
+        .p-news__logo {
+            max-width: 600px;
+            position: absolute;
+            bottom: 0;
+            left: -210px;
+            z-index: -1;
+        }
+    }
+    .p-news__title {
+        width: 100%;
+        max-width: 553px;
+        margin-inline: auto;
+        text-align: center;
+        margin-bottom: 65px;
+        span {
+            font-family: "arial";
+            font-weight: 700;
+            font-size: rem(16);
+            letter-spacing: 2.4px;
+            display: block;
+            margin-top: 20px;
+        }
+    }
+    .p-news__title-sub {
+        width: 100%;
+        margin-bottom: 40px;
+        &.-event {
+            max-width: 178px;
+        }
+        &.-news {
+            max-width: 146px;
+        }
+    }
+    .p-news__body {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: auto;
+        column-gap: 77px;
+        row-gap: 20px;
+    }
+    .p-news__article {
+        display: flex;
+    }
+    .p-news__image {
+        width: 120px;
+        height: 120px;
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .p-news__text {
+        width: calc(100% - 120px);
+        padding-left: 44px;
+    }
+    .p-news__date {
+        font-family: 'Ibarra Real Nova', serif;
+        font-weight: 700;
+        font-size: rem(12);
+        color: $text-color;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 13px;
+    }
+    .p-news__title-main {
+        font-weight: 700;
+        font-size: rem(13);
+        color: $text-color;
+        letter-spacing: 1.3px;
+        margin-bottom: 10px;
+    }
+    .p-news__content {
+        font-size: rem(12);
+        color: $text-color;
+        letter-spacing: 1px;
+        line-height: 1.66;
+    }
+}
+
+// ニュース詳細
+.p-news__detail {
+    padding: 55px 0 90px;
+    .p-detail__image {
+        margin-bottom: 50px;
+    }
+    .p-detail__date {
+        font-family: 'Ibarra Real Nova', serif;
+        font-weight: 700;
+        font-size: rem(12);
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 16px;
+    }
+    .p-detail__title {
+        font-weight: 700;
+        font-size: rem(24);
+        letter-spacing: 2.4px;
+        margin-bottom: 53px;
+    }
+    .p-detail__content {
+        margin-bottom: 120px;
+        p {
+            font-size: rem(16);
+            letter-spacing: 1.6px;
+            line-height: 2.3;
+        }
+    }
+    .p-detail__link {
+        font-weight: 700;
+        font-size: rem(16);
+        color: $text-color;
+        letter-spacing: 2.4px;
+        width: 410px;
+        display: block;
+        text-align: center;
+        border: solid 1px #707070;
+        padding: 42px 0;
+        margin: 0 auto 80px;
+        position: relative;
+        transition: $transition;
+        &:after {
+            content: '';
+            display: inline-block;
+            background: url(../img/common/arrow2.svg)no-repeat;
+            background-size: contain;
+            width: 11px;
+            height: 17px;
+            position: absolute;
+            top: 50%;
+            right: 120px;
+            transform: translateY(-50%);
+            transition: $transition;
+        }
+        span {
+            font-family: 'Ibarra Real Nova', serif;
+            font-size: rem(30);
+            letter-spacing: 0;
+        }
+        &:hover {
+            color: #fff;
+            background: $text-color;
+            &:after {
+                content: '';
+                display: inline-block;
+                background: url(../img/common/arrow1.svg)no-repeat;
+                background-size: contain;
+                width: 11px;
+                height: 17px;
+                position: absolute;
+                top: 50%;
+                right: 120px;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+
+/*
+  レスポンシブ
+————————————————————————————————————————— */
+
+@include mq(max, lg) {
+    /* ======================
+    project(992)
+    =========================*/
+    .p-news {
+        padding: 54px 0 90px;
+        &:first-child {
+            padding: 140px 0 90px;
+            .p-news__bg {
+                display: none;
+            }
+            .p-news__logo {
+                max-width: 100%;
+                bottom: 0;
+                left: 0;
+            }
+        }
+        .p-news__title {
+            margin-bottom: 54px;
+            span {
+                font-size: rem(14);
+                letter-spacing: 1.4px;
+                line-height: 2.1;
+            }
+        }
+        .p-news__title-sub {
+            margin-inline: auto;
+            margin-bottom: 33px;
+            &.-event {
+                max-width: 94px;
+            }
+            &.-news {
+                max-width: 80px;
+            }
+        }
+        .p-news__body {
+            grid-template-columns: repeat(1,1fr);
+            column-gap: unset;
+            row-gap: 18px;
+        }
+        .p-news__text {
+            padding-left: 14px;
+        }
+        .p-news__date {
+            margin-bottom: 16px;
+        }
+        .p-news__title-main {
+            margin-bottom: 8px;
+        }
+    }
+
+    // ニュース詳細
+    .p-news__detail {
+        padding: 59px 0 147px;
+        .p-detail__image {
+            width: calc(100% + 12%);
+            margin-left: -6%;
+            margin-bottom: 68px;
+        }
+        .p-detail__title {
+            font-size: rem(18);
+            letter-spacing: 1.8px;
+            line-height: 1.66;
+            margin-bottom: 60px;
+        }
+        .p-detail__content {
+            margin-bottom: 110px;
+            p {
+                font-size: rem(14);
+                letter-spacing: .7px;
+                line-height: 2.1;
+            }
+        }
+        .p-detail__link {
+            font-size: rem(13);
+            letter-spacing: 2px;
+            width: 100%;
+            max-width: 315px;
+            padding: 35px 0;
+            margin: 0 auto 60px;
+            &:after {
+                width: 9px;
+                height: 14px;
+                right: 86px;
+            }
+            span {
+                font-size: rem(25);
+            }
+        }
+    }
+}

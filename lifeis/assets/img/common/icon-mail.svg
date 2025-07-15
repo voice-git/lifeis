@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="23.919" height="16.918" viewBox="0 0 23.919 16.918">
+  <g id="グループ_6608" data-name="グループ 6608" transform="translate(0)">
+    <g id="長方形_1178" data-name="長方形 1178" transform="translate(0 0)" fill="none" stroke="#000" stroke-width="1">
+      <rect width="23.919" height="16.918" stroke="none"/>
+      <rect x="0.5" y="0.5" width="22.919" height="15.918" fill="none"/>
+    </g>
+    <g id="多角形_6" data-name="多角形 6" transform="translate(23.919 10.501) rotate(180)" fill="none">
+      <path d="M11.96,0l11.96,10.5H0Z" stroke="none"/>
+      <path d="M 11.95955562591553 1.33077335357666 L 2.654487609863281 9.501095771789551 L 21.26462364196777 9.501095771789551 L 11.95955562591553 1.33077335357666 M 11.95955562591553 -3.814697265625e-06 L 23.91911506652832 10.50109577178955 L -3.814697265625e-06 10.50109577178955 L 11.95955562591553 -3.814697265625e-06 Z" stroke="none" fill="#000"/>
+    </g>
+  </g>
+</svg>

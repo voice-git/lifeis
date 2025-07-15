@@ -1,0 +1,83 @@
+/*
+  Base
+————————————————————————————————————————— */
+
+@font-face {
+    font-family: "arial";
+    src: url("../font/arial.woff") format("woff");
+}
+
+@font-face {
+    font-family: "arialbd";
+    src: url("../font/arialbd.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Helvetica";
+    src: url("../font/Helvetica.woff") format("woff");
+}
+
+// font-family: 'Ibarra Real Nova', serif; NotoSansJP
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho&display=swap');
+body {
+    font-family: 'Noto Sans JP' , sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    font-stretch: normal;
+    color: $text-color;
+    line-height: 1;
+    &.home,
+    &.page-id-75 {
+        transition: all 0.6s ease 0s;
+    }
+}
+
+//====================================
+//  breakpoints
+//====================================
+
+$breakpoints: (
+sm: 576px,
+md: 768px,
+lg: 992px,
+xl: 1200px,
+) !default;
+@mixin mq($type, $bp1, $bp2:0) {
+    @if ($type == min) {
+        @media screen and (min-width: #{map-get($breakpoints, $bp1)}) {
+        @content;
+        }
+    } @else if ($type == max) {
+        $width: map-get($breakpoints, $bp1);
+        $width: $width - 1px;
+        @media screen and (max-width: #{$width}) {
+        @content;
+        }
+    } @else if ($type == bw) { // bw → between
+        $width: map-get($breakpoints, $bp2);
+        $width: $width - 1px;
+        @media screen and (min-width: #{map-get($breakpoints, $bp1)})
+        and (max-width: #{$width}) {
+        @content;
+        }
+    }
+}
+
+//====================================
+//  px→remの計算
+//====================================
+
+@function rem($px) {
+  @return ($px / 16) * 1rem;
+}
+// font-size: rem(16);
+
+//====================================
+//  px→emの計算
+//====================================
+@function em($px) {
+  @return ($px / 16) * 1em;
+}
+// letter-spacing: em(2);

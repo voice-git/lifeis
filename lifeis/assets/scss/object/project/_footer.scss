@@ -1,0 +1,222 @@
+/*
+  footer
+————————————————————————————————————————— */
+.p-footer {
+    small {
+        font-size: rem(12);
+        letter-spacing: 1.8px;
+    }
+    &.-top {
+        text-align: center;
+        .p-footer__logo {
+            width: 167px;
+            margin: 0 auto 48px;
+        }
+        .p-footer__sns {
+            font-size: rem(12);
+            letter-spacing: 1.8px;
+            color: $text-color;
+            display: inline-block;
+            width: fit-content;
+            margin: 0 auto 40px;
+            position: relative;
+            &:after {
+                content: '';
+                display: inline-block;
+                background: url(../img/common/icon-insta.svg)no-repeat;
+                background-size: contain;
+                width: 27px;
+                height: 27px;
+                vertical-align: middle;
+                margin-left: 10px;
+            }
+        }
+        address {
+            font-size: rem(12);
+            letter-spacing: 1.8px;
+            line-height: 1.66;
+            margin-bottom: 27px;
+        }
+    }
+    &.-other {
+        width: 640px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        padding-bottom: 70px;
+        .p-footer__box {
+            width: 45%;
+            &:last-child {
+                width: 37%;
+            }
+        }
+        .p-footer__logo {
+            width: 140px;
+            margin-bottom: 26px;
+        }
+        address {
+            font-size: rem(12);
+            letter-spacing: 1.8px;
+            line-height: 1.66;
+            margin-bottom: 16px;
+        }
+        .p-footer__sns {
+            font-size: rem(12);
+            letter-spacing: 1.8px;
+            color: $text-color;
+            display: block;
+            width: fit-content;
+            margin-bottom: 16px;
+            position: relative;
+            &:after {
+                content: '';
+                display: inline-block;
+                background: url(../img/common/icon-insta.svg)no-repeat;
+                background-size: contain;
+                width: 27px;
+                height: 27px;
+                vertical-align: middle;
+                margin-left: 10px;
+            }
+        }
+        .p-footer__text {
+            font-family: 'Ibarra Real Nova', serif;
+            font-weight: 700;
+            font-size: rem(20);
+            margin-bottom: 16px;
+        }
+        .p-footer__text2 {
+            font-size: rem(13);
+            letter-spacing: 1px;
+            line-height: 1.7;
+            margin-bottom: 23px;
+        }
+        .p-footer__text3 {
+            font-size: rem(30);
+            color: $text-color;
+            letter-spacing: 3px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .p-footer__text4 {
+            font-size: rem(12);
+            letter-spacing: 1.8px;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+        .p-footer__link {
+            font-size: rem(18);
+            letter-spacing: 1.8px;
+            color: $text-color;
+            display: block;
+            max-width: 290px;
+            padding: 33px 0;
+            text-align: center;
+            background: #fff;
+            position: relative;
+            &:before {
+                content: '';
+                display: inline-block;
+                background: url(../img/common/icon-mail.svg)no-repeat;
+                background-size: contain;
+                width: 23px;
+                height: 16px;
+                vertical-align: middle;
+                margin-left: -16px;
+                margin-right: 16px;
+            }
+            &:after {
+                content: '';
+                display: inline-block;
+                background: url(../img/common/arrow2.svg)no-repeat;
+                background-size: contain;
+                width: 11px;
+                height: 17px;
+                position: absolute;
+                top: 50%;
+                right: 15px;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+/*
+  レスポンシブ
+————————————————————————————————————————— */
+
+@include mq(max, lg) {
+    /* ======================
+    project(992)
+    =========================*/
+    .p-footer {
+        &.-top {
+            .p-footer__logo {
+                width: 124px;
+                margin: 0 auto 28px;
+            }
+            .p-footer__sns {
+                margin: 0 auto 33px;
+            }
+            address {
+                margin-bottom: 25px;
+            }
+        }
+        &.-other {
+            width: unset;
+            display: block;
+            padding-bottom: unset;
+            .p-footer__box {
+                text-align: center;
+                width: 100%;
+                &:last-child {
+                    width: 100%;
+                    margin-top: 47px;
+                }
+            }
+            .p-footer__logo {
+                width: 124px;
+                margin-inline: auto;
+                margin-bottom: 20px;
+            }
+            address {
+                margin-bottom: 14px;
+            }
+            .p-footer__sns {
+                margin-inline: auto;
+                margin-bottom: 16px;
+            }
+            .p-footer__text {
+                margin-bottom: 18px;
+            }
+            .p-footer__text2 {
+                margin-bottom: 24px;
+            }
+            .p-footer__text3 {
+                font-size: rem(30);
+                color: $text-color;
+                letter-spacing: 3px;
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+            .p-footer__link {
+                font-size: rem(14);
+                letter-spacing: 1.4px;
+                max-width: 233px;
+                padding: 16px 0;
+                margin: 0 auto;
+                &:before {
+                    width: 16px;
+                    height: 11px;
+                }
+                &:after {
+                    width: 10px;
+                    height: 16px;
+                    right: 13px;
+                }
+            }
+        }
+    }
+}

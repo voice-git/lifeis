@@ -1,0 +1,480 @@
+/*
+  component
+————————————————————————————————————————— */
+
+// ボタン
+.c-link {
+    font-family: "arial";
+    font-weight: 700;
+    font-size: rem(16);
+    color: $text-color;
+    letter-spacing: 2.4px;
+    display: block;
+    text-align: center;
+    border-bottom: 1px solid #707070;
+    width: fit-content;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    position: relative;
+    &:after {
+        content: '';
+        display: inline-block;
+        background: url(../img/common/arrow2.svg)no-repeat;
+        background-size: contain;
+        width: 11px;
+        height: 17px;
+        vertical-align: middle;
+    }
+}
+
+// タイトル
+.c-title {
+    font-family: 'Ibarra Real Nova', serif;
+    font-weight: 700;
+    font-size: rem(78);
+    text-align: center;
+    span {
+        font-family: "arial";
+        font-weight: 700;
+        font-size: rem(16);
+        letter-spacing: 2.4px;
+        display: block;
+        margin-top: 20px;
+    }
+}
+
+// タブ切り替え
+.c-tab__menu {
+    .c-tab__list {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+        column-gap: 70px;
+        justify-content: center;
+        &.-list2 {
+            grid-template-columns: auto auto auto;
+        }
+    }
+    .c-tab__body {
+        padding-top: 80px;
+    }
+    .c-tab {
+        font-weight: 700;
+        font-size: rem(16);
+        color: #B3B3B3;
+        letter-spacing: 3.2px;
+        width: fit-content;
+        padding: 0 18px 10px;
+        text-align:center;
+        cursor:pointer;
+        transition: $transition;
+        &.is-active {
+            color: $text-color;
+            border-bottom: 1px solid $text-color;
+        }
+    }
+    .c-panel {
+        display:none;
+        &.is-show {
+            display: block;
+        }
+    }
+}
+
+// アコーディオン
+.c-toggl__box {
+    .c-toggle__title {
+        font-weight: 700;
+        font-size: rem(19);
+        letter-spacing: 1px;
+        line-height: 2.5;
+        position: relative;
+        padding: 20px 90px 20px 56px;
+        cursor: pointer;
+        &:before {
+            content: 'Q';
+            display: inline-block;
+            font-family: 'Ibarra Real Nova', serif;
+            font-weight: 700;
+            font-size: rem(38);
+            vertical-align: middle;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+
+        }
+        &:after {
+            content: '';
+            display: inline-block;
+            background: url(../img/common/arrow5.svg)no-repeat;
+            background-size: contain;
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%) rotate(-180deg);
+            transition: $transition;
+        }
+        &.selected:after {
+            transform: translateY(-50%) rotate(0deg);
+        }
+    }
+    dd {
+        display: none;
+    }
+    .c-toggle__list {
+        padding-left: 56px;
+        padding-right: 70px;
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+    .c-toggle__text {
+        font-size: rem(14);
+        letter-spacing: 2.8px;
+        line-height: 2.1;
+    }
+}
+
+// ハンバーガーメニュー
+.c-button {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.c-hamburger {
+    position: fixed;
+    top: 50%;
+    left: 70px;
+    transform: translateY(-50%);
+    z-index: 50;
+    width: 48px;
+    height: 48px;
+    margin: auto;
+    box-shadow: 0 0 2rem transparent;
+    outline: none;
+    &__line {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        width: 28px;
+        height: 2px;
+        background-color: $text-color;
+        -webkit-transition: inherit;
+              transition: inherit;
+        transition: 0.35s ease-in-out;
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: $text-color;
+            content: '';
+            -webkit-transition: inherit;
+            transition: inherit;
+        }
+        &:before {
+            top: -11px;
+        }
+        &:after {
+            top: 11px;
+            width: 18px;
+        }
+    }
+    .c-hamburger__text {
+        &:after {
+            content: 'menu';
+            display: block;
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Ibarra Real Nova', serif;
+            font-size: rem(16);
+            color: $text-color;
+        }
+        &.is-active {
+            &:after {
+                content: 'close';
+                color: #fff;
+            }
+        }
+    }
+}
+
+.c-hamburger[aria-expanded="true"] {
+    .c-hamburger__line {
+        background-color: transparent;
+        transform: translate(-50px, 0);
+        &:before,
+        &:after {
+            top: 0;
+            background-color: #fff;
+        }
+        &:before {
+            -webkit-transform: rotate(315deg);
+            -ms-transform: rotate(315deg);
+            transform: translate(50px, 0) rotate(315deg);
+        }
+        &:after {
+            width: 28px;
+            -webkit-transform: rotate(-315deg);
+            -ms-transform: rotate(-315deg);
+            transform: translate(50px, 0) rotate(-315deg);
+        }
+    }
+}
+
+// ページネーション
+.c-pagenation {
+    width: fit-content;
+    margin: 135px auto 0;
+    .page-numbers {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        &:before {
+            content: '0';
+            display: inline-block;
+        }
+    }
+    li {
+        font-size: rem(18);
+        letter-spacing: 2px;
+        margin: 0 18px;
+        .current {
+            color: $text-color;
+        }
+    }
+    a {
+        color: #A6A6A6;
+    }
+    ul.page-numbers {
+        &:before {
+            display: none;
+        }
+    }
+    .prev,
+    .next {
+        display: block;
+        width: 14px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        &:before {
+            display: none;
+        }
+    }
+    .prev {
+        left: 0;
+    }
+    .next {
+        right: 0;
+    }
+}
+
+// スライダー
+.next-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    width: 15px;
+    right: -5%;
+    cursor: pointer;
+}
+
+.prev-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+    width: 15px;
+    left: -5%;
+    cursor: pointer;
+}
+
+.c-slide-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    li {
+        height: 36px;
+        width: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 28px;
+        &:last-child {
+            margin-right: 0;
+        }
+        button {
+            border: none;
+            text-indent: -9999px;
+            height: 10px;
+            border-radius: 50%;
+            width: 10px;
+            padding: 0;
+        }
+        &.slick-active {
+            border: solid 1px #9F9F9F;
+            border-radius: 50%;
+        }
+    }
+    .c-slide-dots__num {
+        font-family: "Helvetica";
+        font-size: rem(14);
+        letter-spacing: 1.4px;
+    }
+}
+
+/*
+  レスポンシブ
+————————————————————————————————————————— */
+
+@include mq(max, lg) {
+    /* ======================
+    component(992)
+    =========================*/
+    // ボタン
+    .c-link {
+        font-size: rem(14);
+        letter-spacing: 2.1px;
+        &:after {
+            width: 10px;
+            height: 16px;
+        }
+    }
+
+    // タイトル
+    .c-title {
+        font-size: rem(50);
+        &.-sp {
+            font-size: rem(46);
+        }
+        span {
+            font-size: rem(14);
+            letter-spacing: 1.4px;
+            line-height: 2.1;
+        }
+    }
+
+    .c-hamburger {
+        top: 16px;
+        left: unset;
+        right: 5%;
+        transform: translateY(0);
+        width: 30px;
+        height: 42px;
+        &__line {
+            width: 30px;
+            &:before {
+                top: -10px;
+            }
+            &:after {
+                top: 10px;
+                width: 13px;
+            }
+        }
+        .c-hamburger__text {
+            &:after {
+                top: -12px;
+                font-size: rem(13);
+            }
+        }
+    }
+    .c-hamburger[aria-expanded="true"] {
+        .c-hamburger__line {
+            &:after {
+                width: 30px;
+            }
+        }
+    }
+
+    // ページネーション
+    .c-pagenation {
+        margin: 70px auto 0;
+        li {
+            font-size: rem(14);
+            letter-spacing: 1.4px;
+            margin: 0 15px;
+        }
+        .prev,
+        .next {
+            width: 12px;
+        }
+    }
+
+    // タブ切り替え
+    .c-tab__menu {
+        .c-tab__list {
+            column-gap: 30px;
+            &.-list2 {
+                grid-template-columns: auto auto;
+                row-gap: 30px;
+            }
+        }
+        .c-tab {
+            font-size: rem(14);
+            letter-spacing: 2.8px;
+            padding: 0 12px 6px;
+        }
+    }
+
+    // アコーディオン
+    .c-toggl__box {
+        .c-toggle__title {
+            font-size: rem(16);
+            letter-spacing: 1.6px;
+            line-height: 1.8;
+            padding: 0 80px 50px 45px;
+            &:before {
+                font-size: rem(34);
+                line-height: .8;
+                top: 0;
+                transform: translateY(0);
+
+            }
+            &:after {
+                top: 0;
+                transform: translateY(0);
+            }
+            &.selected {
+                padding: 0 80px 20px 45px;
+            }
+            &.selected:after {
+                transform: translateY(0) rotate(-180deg);
+            }
+        }
+        .c-toggle__list {
+            padding-left: 45px;
+            padding-right: unset;
+            margin-top: unset;
+            margin-bottom: 70px;
+        }
+    }
+
+    // スライダー
+    .next-arrow {
+        top: 150px;
+        right: -7%;
+    }
+
+    .prev-arrow {
+        top: 150px;
+        left: -7%;
+    }
+}

@@ -1,0 +1,317 @@
+/*
+  about
+————————————————————————————————————————— */
+.p-about {
+    &.-top {
+        padding-top: 120px;
+        padding-bottom: 250px;
+        .p-about__logo {
+            width: 277px;
+            margin: 0 auto 120px;
+        }
+        .p-about__text-box {
+            position: relative;
+        }
+        .p-about__logo-bg {
+            max-width: 540px;
+            position: absolute;
+            top: 57px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .p-about__text {
+            font-size: rem(16);
+            letter-spacing: 4px;
+            line-height: 3;
+            text-align: center;
+        }
+        .p-about__member {
+            margin-top: 248px;
+            position: relative;
+        }
+        .p-member__list {
+            margin-top: 78px;
+        }
+        .p-member__item {
+            display: flex;
+            margin-bottom: 126px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        .p-member__image {
+            width: 26%;
+            padding-right: 74px;
+        }
+        .p-member__text-box {
+            width: 74%;
+        }
+        .p-member__title {
+            font-family: 'Ibarra Real Nova', serif;
+            font-weight: 700;
+            font-size: rem(29);
+            text-align: center;
+            span {
+                font-family: "arial";
+                font-size: rem(16);
+                letter-spacing: 3.2px;
+                display: block;
+                margin-top: 15px;
+            }
+        }
+        .p-member__text {
+            font-weight: 700;
+            font-size: rem(16);
+            letter-spacing: 2.4px;
+            display: block;
+            margin-bottom: 26px;
+        }
+        .p-member__text2 {
+            font-size: rem(14);
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 20px;
+        }
+        .p-member__text3 {
+            font-size: rem(13);
+            letter-spacing: 2px;
+            line-height: 1.85;
+        }
+    }
+    &.-about,
+    &.-recruit {
+        padding-bottom: 175px;
+        .p-about__image {
+            width: calc(100% + 230px);
+            margin-left: -230px;
+            margin-bottom: 120px;
+        }
+        .p-about__title {
+            font-family: 'Ibarra Real Nova', serif;
+            font-weight: 700;
+            font-size: rem(45);
+            text-align: center;
+            span {
+                font-family: "arial";
+                font-size: rem(16);
+                letter-spacing: 3.2px;
+                display: block;
+                margin-top: 19px;
+            }
+        }
+        .p-about__body {
+            margin-top: 70px;
+        }
+        dl {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 30px 0;
+            border-bottom: 1px solid #707070;
+        }
+        dt,dd {
+            font-size: rem(14);
+            letter-spacing: 2.8px;
+            line-height: 2.1;
+            vertical-align: middle;
+        }
+        dt {
+            width: 30%;
+            max-width: 150px;
+            display: flex;
+            align-items: center;
+        }
+        dd {
+            width: 70%;
+            max-width: calc(100% - 150px);
+        }
+        .p-about__map {
+            width: 100%;
+            margin-top: 40px;
+            iframe {
+                width: 100%;
+                height: 460px;
+            }
+        }
+    }
+    &.-recruit {
+        padding-bottom: 200px;
+    }
+    &.-policy {
+        padding-bottom: 160px;
+        .p-policy__title {
+            font-family: 'Ibarra Real Nova', serif;
+            font-weight: 700;
+            font-size: rem(37);
+            text-align: center;
+            span {
+                font-family: "arial";
+                font-size: rem(16);
+                letter-spacing: 3.2px;
+                display: block;
+                margin-top: 19px;
+            }
+        }
+        .p-policy__body {
+            margin-top: 56px;
+        }
+        .p-policy__text {
+            font-size: rem(14);
+            letter-spacing: 2px;
+            line-height: 2.1;
+            margin-bottom: 67px;
+        }
+        dl {
+            margin-bottom: 40px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        dt,
+        dd {
+            font-size: rem(14);
+            letter-spacing: 2px;
+            line-height: 2.1;
+        }
+    }
+}
+
+
+/*
+  レスポンシブ
+————————————————————————————————————————— */
+
+@include mq(max, lg) {
+    /* ======================
+    project(992)
+    =========================*/
+    .p-about {
+        &.-top {
+            padding-top: 130px;
+            padding-bottom: 175px;
+            .p-about__logo {
+                width: 171px;
+                margin: 0 auto 83px;
+            }
+            .p-about__logo-bg {
+                width: 100%;
+                top: 50%;
+                transform: translateY(-50%) translateX(-50%);
+            }
+            .p-about__text {
+                font-size: rem(14);
+                letter-spacing: 2.7px;
+            }
+            .p-about__member {
+                margin-top: 140px;
+            }
+            .p-member__item {
+                display: block;
+                margin-bottom: 107px;
+            }
+            .p-member__image {
+                width: 49%;
+                margin-inline: auto;
+                padding-right: unset;
+                padding-bottom: 20px;
+            }
+            .p-member__text-box {
+                width: 100%;
+            }
+            .p-member__title {
+                font-size: rem(26);
+                span {
+                    font-size: rem(14);
+                    letter-spacing: 1.4px;
+                }
+            }
+            .p-member__text {
+                font-size: rem(14);
+                letter-spacing: 2.1px;
+                margin-bottom: 19px;
+            }
+            .p-member__text2 {
+                font-size: rem(12);
+                letter-spacing: 1.2px;
+                margin-bottom: 14px;
+            }
+            .p-member__text3 {
+                font-size: rem(12);
+                letter-spacing: 1.2px;
+            }
+        }
+        &.-about,
+        &.-recruit {
+            padding-bottom: 130px;
+            .p-about__image {
+                width: calc(100% + 12%);
+                margin-left: -6%;
+                margin-bottom: 77px;
+            }
+            .p-about__title {
+                span {
+                    font-size: rem(14);
+                    letter-spacing: 1.4px;
+                    margin-top: 20px;
+                }
+            }
+            .p-about__body {
+                margin-top: 46px;
+            }
+            dl {
+                display: block;
+                padding: 20px 0;
+            }
+            dt {
+                width: 100%;
+                max-width: unset;
+                display: block;
+                margin-bottom: 10px;
+            }
+            dd {
+                width: 100%;
+                max-width: unset;
+                span {
+                    letter-spacing: -0.7px;
+                }
+            }
+            .p-about__map {
+                margin-top: 26px;
+                iframe {
+                    height: 310px;
+                }
+            }
+        }
+        &.-recruit {
+            padding-bottom: 130px;
+        }
+        &.-policy {
+            padding-bottom: 130px;
+            .p-policy__title {
+                font-size: rem(26);
+                span {
+                    font-size: rem(12);
+                    letter-spacing: 1.2px;
+                    margin-top: 14px;
+                }
+            }
+            .p-policy__body {
+                margin-top: 34px;
+            }
+            .p-policy__text {
+                font-size: rem(12);
+                letter-spacing: 1.2px;
+                line-height: 1.8;
+                margin-bottom: 39px;
+            }
+            dl {
+                margin-bottom: 30px;
+            }
+            dt,
+            dd {
+                font-size: rem(12);
+                letter-spacing: 1.2px;
+                line-height: 1.8;
+            }
+        }
+    }
+}

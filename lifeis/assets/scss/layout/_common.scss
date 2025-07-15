@@ -1,0 +1,138 @@
+/*
+  layout
+————————————————————————————————————————— */
+.l-main {
+    display: flex;
+    // overflow-x: hidden;
+}
+
+.l-header {
+    width: 230px;
+    height: 100vh;
+    background: rgba(255,255,255,.5);
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+}
+
+.l-footer {
+    background: $bg-color;
+    padding: 120px 0 23px;
+}
+
+.l-siteWrapper {
+    width: calc(100% - 230px);
+    position: relative;
+    margin-left: 230px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.l-article {
+    flex: 1;
+}
+
+.l-wrapper {
+    max-width: 868px;
+    margin: 0 auto;
+}
+
+.l-wrapper2 {
+    padding-right: 5%;
+}
+
+.l-wrapper3 {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.l-wrapper4 {
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.l-wrapper5 {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.l-wrapper6 {
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+.l-wrapper7 {
+    width: 90%;
+    max-width: 932px;
+    margin: 0 auto;
+}
+
+.l-wrapper8 {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+// レイアウト
+.l-section {
+    position: relative;
+    z-index: 2;
+}
+
+/*
+  レスポンシブ
+————————————————————————————————————————— */
+
+@include mq(max, lg) {
+    /* ======================
+    layout(992)
+    =========================*/
+    .l-wrapper {
+        max-width: 90%;
+    }
+    .l-wrapper2 {
+        max-width: 90%;
+        margin: 0 auto;
+        padding-right: unset;
+    }
+    .l-wrapper5 {
+        max-width: 90%;
+    }
+    .l-wrapper6 {
+        max-width: 90%;
+    }
+    .l-wrapper7 {
+        max-width: 90%;
+    }
+    .l-wrapper8 {
+        max-width: 85%;
+        margin: 0 auto;
+    }
+    .l-main {
+        display: block;
+        overflow-x: hidden;
+    }
+    .l-header {
+        width: 100%;
+        height: unset;
+        background: rgba(255,255,255,1);
+        padding: 4% 16px;
+    }
+    .l-siteWrapper {
+        width: calc(100%);
+        margin-left: unset;
+    }
+    .l-footer {
+        padding: 54px 0 26px;
+    }
+}
+
+@include mq(max, md) {
+    /* ======================
+    layout(768)
+    =========================*/
+    .l-wrapper4 {
+        max-width: 90%;
+    }
+}

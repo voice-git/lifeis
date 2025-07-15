@@ -1,0 +1,28 @@
+<?php
+/*
+Template Name:イベントフォーム
+*/
+?>
+<?php get_header();?>
+
+	<section class="l-section p-form">
+		<div class="l-wrapper4">
+			<h2 class="p-form__title -eventform">
+				<img src="<?php echo get_template_directory_uri();?>/assets/img/contact/eventform-title.svg" alt="EVENT FORM" decoding="async">
+				<span>イベントのお申し込みはこちらから</span>
+			</h2>
+			<div class="p-form__body">
+				<?php if(have_posts()):?>
+				<?php while(have_posts()):the_post();?>
+
+					<?php the_content(); ?>
+
+				<?php
+				    endwhile;
+				    endif;
+				?>
+			</div>
+		</div>
+	</section>
+
+<?php get_footer(); ?>

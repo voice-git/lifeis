@@ -1,0 +1,376 @@
+/*
+  form
+————————————————————————————————————————— */
+.p-form {
+    padding: 110px 0 140px;
+    .p-form__title {
+        text-align: center;
+        &.-form {
+            img {
+                width: 100%;
+                max-width: 380px;
+                margin-inline: auto;
+            }
+        }
+        &.-eventform {
+            img {
+                width: 100%;
+                max-width: 533px;
+                margin-inline: auto;
+            }
+        }
+        span {
+            font-family: "arial";
+            font-weight: 700;
+            font-size: rem(16);
+            letter-spacing: 2.4px;
+            display: block;
+            margin-top: 26px;
+        }
+    }
+    .p-form__body {
+        margin-top: 114px;
+    }
+    .p-contact__table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        th {
+            font-family: "Helvetica";
+            font-size: rem(18);
+            letter-spacing: 2.7px;
+            width: 100%;
+            display: block;
+            padding-bottom: 20px;
+            span {
+                color: #DB1C1C;
+            }
+        }
+        td {
+            width: 100%;
+            display: block;
+            padding-bottom: 50px;
+        }
+    }
+    .contents-box {
+        .mwform-radio-field {
+            margin-right: unset;
+            margin-bottom: 18px;
+        }
+    }
+    .zip-text {
+        font-family: "arial";
+        font-size: rem(16);
+        letter-spacing: 2.4px;
+        margin-bottom: 26px;
+    }
+    .zip-box {
+        display: flex;
+        align-items: center;
+        margin-bottom: 27px;
+    }
+    .zip-button-box {
+        width: 173px;
+        margin-left: 37px;
+        position: relative;
+        &:after {
+            content: '';
+            display: inline-block;
+            background: url(../img/common/arrow2.svg)no-repeat;
+            background-size: contain;
+            width: 11px;
+            height: 17px;
+            position: absolute;
+            top: 50%;
+            right: 11px;
+            transform: translateY(-50%);
+        }
+        .zip-button {
+            font-family: "arial";
+            font-size: rem(16);
+            letter-spacing: 2.4px;
+            line-height: 1;
+            display: block;
+            width: 100%;
+            height: 60px;
+            padding: 20px 0;
+            text-align: center;
+            border: solid 1px #B9B9B9;
+            background: #fff;
+            cursor: pointer;
+        }
+    }
+    .event-box {
+        display: flex;
+        margin-bottom: 18px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .event-day {
+            font-size: rem(16);
+            letter-spacing: 2.4px;
+            display: inline-block;
+            margin-right: 35px;
+        }
+    }
+    .mwform-radio-field {
+        margin-right: 10px;
+    }
+    .form_style01 {
+        font-family: "arial";
+        font-size: rem(16);
+        width: 100%;
+        height: 60px;
+        padding: 13px 23px;
+        border: solid 1px #B9B9B9;
+    }
+    .form_style02 {
+        font-family: "arial";
+        font-size: rem(16);
+        width: 216px;
+        height: 60px;
+        padding: 13px 23px;
+        border: solid 1px #B9B9B9;
+    }
+    .form_style03 {
+        font-family: "arial";
+        font-size: rem(16);
+        line-height: 1.87;
+        width: 100%;
+        height: 320px;
+        padding: 13px 23px;
+        border: solid 1px #B9B9B9;
+    }
+    .radio {
+        display: none; /* まず、＜input＞タグの表示を消します*/
+    }
+    label {
+        position: relative;/* ＜label＞を位置の指標になる指示を書きます*/
+        display: inline-block;
+        padding-left: 20px;
+        cursor: pointer;
+    }
+    .radio+span::before,/* ＜span＞タグの疑似要素を作ります*/
+    span::after {
+        position: absolute;
+        content: '';
+        top: 50%;
+        -webkit-transition: all .2s;
+        transition: all .2s;
+    }
+    .radio+span::before {
+        left: 0;
+        width: 20px;
+        height: 20px;
+        margin-top: -8px;
+        background: #fff;/* ラジオボタンの元の色の指定*/
+        border: 1px solid #B9B9B9;
+    }
+    .radio+span:hover::before {
+        background: #fff;/* ラジオボタンのマウスオーバーしたときの色の指定*/
+    }
+    .radio+span::after {
+        opacity: 0;
+        left: 4px;
+        width: 12px;
+        height: 12px;
+        margin-top: -4px;
+        background: $text-color;/* ラジオボタンのチェックした時の色の指定*/
+        -webkit-transform: scale(2);
+        transform: scale(2);
+    }
+    .radio:checked + span::before {/* ラジオボタンがチェックされたときの隣接しているタグへの指示を書きます*/
+        background: #fff;
+    }
+    .radio:checked + span::after {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+    .mwform-radio-field-text {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+    input[type=submit] {
+        font-size: rem(16);
+        letter-spacing: 2.4px;
+        color: #fff;
+        background: $text-color;
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        padding: 26px 0;
+        margin: 130px auto 0;
+        text-align: center;
+    }
+    // 確認画面
+    .mw_wp_form_confirm {
+        .p-contact__table {
+            th {
+                span {
+                    display: none;
+                }
+            }
+        }
+        .zip-button-box,
+        .zip-text {
+            display: none;
+        }
+    }
+}
+
+// 完了画面
+.p-comp {
+    padding: 180px 0 300px;
+    text-align: center;
+    .p-comp__title {
+        font-family: 'Ibarra Real Nova', serif;
+        font-weight: 700;
+        font-size: rem(67);
+        margin-bottom: 52px;
+    }
+    .p-comp__text {
+        font-size: rem(16);
+        letter-spacing: 3.2px;
+        line-height: 3;
+        margin-bottom: 130px;
+    }
+}
+
+
+/*
+  レスポンシブ
+————————————————————————————————————————— */
+
+@include mq(max, md) {
+    /* ======================
+    project(767)
+    =========================*/
+    .p-form {
+        padding: 100px 0 168px;
+        .p-form__title {
+            &.-form {
+                img {
+                    max-width: 250px;
+                }
+            }
+            &.-eventform {
+                img {
+                    max-width: 302px;
+                }
+            }
+            span {
+                font-size: rem(14);
+                letter-spacing: 1.4px;
+                line-height: 2.1;
+            }
+        }
+        .p-form__body {
+            margin-top: 92px;
+        }
+        .p-contact__table {
+            text-align: left;
+            th {
+                font-size: rem(14);
+                letter-spacing: .7px;
+                padding-bottom: 14px;
+            }
+            td {
+                font-size: rem(12);
+                letter-spacing: 1.2px;
+                padding-bottom: 38px;
+            }
+        }
+        .zip-text {
+            font-size: rem(14);
+            letter-spacing: .7px;
+            margin-bottom: 20px;
+        }
+        .zip-box {
+            margin-bottom: 21px;
+        }
+        .zip-button-box {
+            width: 130px;
+            margin-left: 14px;
+            &:after {
+                width: 8px;
+                height: 13px;
+                right: 8px;
+            }
+            .zip-button {
+                font-size: rem(12);
+                letter-spacing: 1.8px;
+                color: $text-color;
+                height: 46px;
+                padding: 16px 0;
+            }
+        }
+        .event-box {
+            margin-bottom: 45px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            .event-day {
+                font-size: rem(13);
+                letter-spacing: 1.3px;
+                margin-right: 40px;
+            }
+        }
+        .mwform-radio-field {
+            display: block;
+            margin-right: unset;
+            margin-bottom: 27px;
+        }
+        .mw_wp_form .horizontal-item + .horizontal-item {
+            margin-left: unset;
+        }
+        .form_style01 {
+            height: 46px;
+            padding: 13px 20px;
+        }
+        .form_style02 {
+            width: 130px;
+            height: 46px;
+            padding: 13px 20px;
+        }
+        .form_style03 {
+            line-height: 2.1;
+            height: 245px;
+            padding: 13px 20px;
+        }
+        label {
+            padding-left: 18px;
+        }
+        .radio+span::before {
+            width: 18px;
+            height: 18px;
+        }
+        .radio+span::after {
+            width: 10px;
+            height: 10px;
+        }
+        input[type=submit] {
+            font-size: rem(14);
+            letter-spacing: .7px;
+            max-width: 320px;
+            padding: 18px 0;
+            margin: 0 auto;
+        }
+    }
+
+    // 完了画面
+    .p-comp {
+        padding: 160px 0 110px;
+        .p-comp__title {
+            font-size: rem(50);
+            margin-bottom: 55px;
+        }
+        .p-comp__text {
+            font-size: rem(14);
+            letter-spacing: 1.4px;
+            line-height: 2.1;
+            margin-bottom: 36px;
+        }
+    }
+}

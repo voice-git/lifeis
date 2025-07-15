@@ -1,0 +1,144 @@
+/*
+  header
+————————————————————————————————————————— */
+.p-header {
+    .p-header__logo {
+        position: absolute;
+        bottom: 56px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 98px;
+    }
+}
+
+#p-globalMenuSp {
+    width: 100%;
+    height: 100vh;
+    background: $bg-color3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    opacity: 0;
+    trasition: all .3s;
+    &.is-active {
+        z-index: 10;
+        opacity: 1;
+    }
+    .p-header__list {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        display: flex;
+        align-items: flex-end;
+    }
+    a {
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 2.1px;
+    }
+    .p-header__item {
+        margin-right: 160px;
+        &:last-child {
+            margin-right: 0;
+            .p-header__item2 {
+                margin-bottom: 75px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    .p-header__list2 {
+        display: flex;
+        flex-direction: column;
+    }
+    .p-header__item2 {
+        margin-bottom: 80px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .p-header__item3 {
+        margin-bottom: 10px;
+        &:first-child {
+            margin-bottom: 14px;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        a {
+            font-size: rem(14);
+            letter-spacing: 1.5px;
+            position: relative;
+            &:before {
+                content: '';
+                display: inline-block;
+                background: url(../img/common/arrow1.svg)no-repeat;
+                background-size: contain;
+                width: 8px;
+                height: 14px;
+                vertical-align: middle;
+                margin-right: 14px;
+            }
+        }
+    }
+    .p-header__item4 {
+        margin-bottom: 14px;
+    }
+}
+
+/*
+  レスポンシブ
+————————————————————————————————————————— */
+
+@include mq(max, lg) {
+    /* ======================
+    project(992)
+    =========================*/
+    .p-header {
+        .p-header__logo {
+            position: static;
+            transform: translateX(0);
+            width: 130px;
+        }
+    }
+
+    #p-globalMenuSp {
+        padding-top: 72px;
+        padding-left: 30px;
+        overflow: scroll;
+        .p-header__list {
+            position: static;
+            transform: translateY(0) translateX(0);
+            display: block;
+        }
+        a,span {
+            letter-spacing: 1.8px;
+        }
+        .p-header__item {
+            margin-right: unset;
+            &:last-child {
+                .p-header__item2 {
+                    margin-bottom: 40px;
+                }
+            }
+        }
+        .p-header__list2 {
+            margin-bottom: 40px;
+        }
+        .p-header__item2 {
+            margin-bottom: 40px;
+        }
+        .p-header__item3 {
+            margin-bottom: 27px;
+            &:first-child {
+                margin-bottom: 22px;
+            }
+            a {
+                letter-spacing: 1.4px;
+            }
+        }
+    }
+}
